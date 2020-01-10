@@ -6,18 +6,13 @@
 
 ###  *Record some of my OJ's achievements, learning algorithm experience, and hope to record my growth！*
 
-###   come on 
+###   come on !
 
 ## Drink sweetheart :kissing_heart: :heartpulse:
 
-项目  | 
----- | 
-A lots of Oj  | 
-Database |
-Datastructure| 
-Asscmbly |
-Algorithm |
- Java |
+# 就是我的云笔记吧!😉
 
+### 看到好多大神是造轮子的人，可能我很难成为那种人了吧。
 
-# 其实差不多就是我的云笔记吧 小博客 随笔
+#### 但做个用好轮子的人也不赖啊！
+
