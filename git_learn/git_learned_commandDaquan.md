@@ -34,3 +34,7 @@
 
 - **git reset HEAD** 把暂存区的修改撤销掉（unstage），重新放回工作区
 
+- **git rm file**删除文件 **git rm file** 与 **git add file** 一样都是先提交到**stage**然后**git commit**
+
+- 如果已经提交到版本库了，误删可以通过命令 **git cheackout -- file** 找回，只能回到最近版本
+
