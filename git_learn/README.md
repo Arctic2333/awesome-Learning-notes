@@ -10,4 +10,6 @@
 6. [撤销修改]( [https://github.com/Arctic2333/awesome-Learning-notes/blob/master/git_learn/%E7%AE%A1%E7%90%86%E4%BF%AE%E6%94%B9.md](https://github.com/Arctic2333/awesome-Learning-notes/blob/master/git_learn/管理修改.md) )
 7. 删除文件
 8. 运程库
+9. 创建与合并分支
+10. 解决冲突
 

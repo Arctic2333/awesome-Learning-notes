@@ -38,3 +38,21 @@
 
 - 如果已经提交到版本库了，误删可以通过命令 **git cheackout -- file** 找回，只能回到最近版本
 
+- **git branch** 查看分支 当前分支有*****号标识
+
+- **git branch <name>** 创建分支
+
+- **git checkout <name>** 或 **git switch <name>** 切换分支
+
+- **git checkout -b <name>** 或 **git switch -c <name>**  创建并切换分支
+
+- **git merge <name>** 把某分支合并到当前分支
+
+- **git branch -d <name>** 删除分支
+
+- **git log --graph** 可以查看分支合并图 
+
+- **git log --graph --pretty=online --abbrev-commit** 更简明的缩略图
+
+- 
+
