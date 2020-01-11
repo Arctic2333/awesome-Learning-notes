@@ -54,5 +54,5 @@
 
 - **git log --graph --pretty=online --abbrev-commit** 更简明的缩略图
 
-- 
+- **git merge --no-ff -m "xxxxx"** 禁用fast forward模式 会产生一个**commit** 所以加-**m “  xxx ”**
 
