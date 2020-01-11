@@ -56,3 +56,29 @@
 
 - **git merge --no-ff -m "xxxxx"** 禁用fast forward模式 会产生一个**commit** 所以加-**m “  xxx ”**
 
+- **git stash** 把当前工作现场“储藏”起来
+
+- **git stash list** 查看“储藏”的工作现场
+
+-  **git stash apply**恢复工作现场，但是恢复后，stash内容并不删除，你需要用**git stash drop**来删除； 
+
+- **git stash pop** 恢复工作现场的同时把stash的内容也删除
+
+- **git stash apply stash@{<number>}** 多次stash后恢复指定的stash
+
+- **git stash drop stash@{<number>}** 删除指定的stash
+
+- **git cherry-pick <commit_num>** 复制一个特定的提交到当前分支
+
+- **git branch -D <name>** 强制删除一个没被合并的分支
+
+- **git remote -v** 查看远程库信息
+
+- **git push origin branch-name** 推送本地修改到远程库某分支
+
+- **git pull** 抓取远程的新提交
+
+- **git checkout -b branch-name origin/branch-name** 在本地创建和远程分支对应的分支（一般会自动关联）
+
+- **git branch --set-upstream-to branch-name origin/branch-name** 建立本地分支和远程的关联
+
