@@ -72,7 +72,7 @@
 
 - **git branch -D <name>** 强制删除一个没被合并的分支
 
-- **git remote -v** 查看远程库信息
+- ** git remote -v** 查看远程库信息
 
 - **git push origin branch-name** 推送本地修改到远程库某分支
 
@@ -81,4 +81,24 @@
 - **git checkout -b branch-name origin/branch-name** 在本地创建和远程分支对应的分支（一般会自动关联）
 
 - **git branch --set-upstream-to branch-name origin/branch-name** 建立本地分支和远程的关联
+
+- **git rebase** 把本地未push的分叉提交历史整理成直线 
+
+- **git tag <tagname> <commitId>** 用于新建标签，默认是HEAD也可以指定一个commit
+
+- **git tag -a<tagname> -m "xxxxx"** 可以指定标签信息
+
+- **git tag** 查看所有标签
+
+- **git show <tagname>** 查看标签信息
+
+- **git push origin <tagname>** 推送一个本地标签
+
+- **git push origin --tags** 可以推送全部未推送的本地标签
+
+- **git tag -d <tagname>** 可以删除一个本地标签
+
+- **git push origin :refs/tags/<tagname>** 可以删除一个远程标签（要先删除本地标签）
+
+  
 
