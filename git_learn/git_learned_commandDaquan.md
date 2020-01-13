@@ -72,7 +72,9 @@
 
 - **git branch -D <name>** 强制删除一个没被合并的分支
 
-- ** git remote -v** 查看远程库信息
+- **git push origin --delete<name>**删除一个远程分支
+
+- **git remote -v** 查看远程库信息
 
 - **git push origin branch-name** 推送本地修改到远程库某分支
 
