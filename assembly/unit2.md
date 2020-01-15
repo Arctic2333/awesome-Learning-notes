@@ -126,7 +126,7 @@ CS和IP是8086CPU中两个关键的寄存器。CS为代码段寄存器，IP为�
 4. 取数据送入指令缓冲器同时IP=IP+所读取指令的长度
 5. 执行。转到步骤（1）
 
-![]( https://img-blog.csdnimg.cn/20200115121727753.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70 )
+![]( https://img-blog.csdnimg.cn/20200115121727753.PNG)
 
 
 

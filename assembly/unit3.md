@@ -29,9 +29,9 @@
 
 如：
 
-![](https://img-blog.csdnimg.cn/20200115121525127.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200115121525127.PNG)
 
-![](https://img-blog.csdnimg.cn/20200115121547102.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+![](https://img-blog.csdnimg.cn/20200115121547102.PNG)
 
 - **mov，add，sub 指令中[num] ：num都是字单元的起始地址，也就是低位字节，num+1是高位字节，num和num+1共同构成一个数据。**
 
