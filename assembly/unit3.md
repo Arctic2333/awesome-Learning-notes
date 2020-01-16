@@ -103,3 +103,6 @@ pop 段寄存器
 
 ![](https://img-blog.csdnimg.cn/20200116175338709.PNG)
 
+![](https://img-blog.csdnimg.cn/20200116233848376.PNG)
+
+执行中断例程时，CPU会将一些中断例程中使用的寄存器变量自动压入到栈中。
