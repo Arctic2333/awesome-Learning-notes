@@ -99,3 +99,7 @@ pop 段寄存器
 
 
 
+## 段
+
+![](https://img-blog.csdnimg.cn/20200116175338709.PNG)
+
