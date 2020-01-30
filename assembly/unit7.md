@@ -78,3 +78,14 @@ loop默认cx为循环计数器
 两层循环时要先将外层循环的cx入栈。
 
 ![](https://img-blog.csdnimg.cn/20200130145455735.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
+##     8086CPU 提供将数直接写入内存的功能
+
+![](https://img-blog.csdnimg.cn/20200130154708357.PNG)
+
+​        **但要告诉CPU传送的数据类型**
+
+- **mov byte ptr [bx],5   字节传送**
+- **mov word ptr [bx],5  字传送**
+
+ 综上所述，立即数是可以写入内存的，但要显式指定传送的数据类型。需要注意的是，用于字节传送的立即数不能大于0ffh；字传送的立即数不能大于0ffffh，否则都会引起值超出范围而无法传送。 
