@@ -103,3 +103,7 @@ dw 重复次数 dup （重复的字型数据）
 
 dd 重复次数 dup （重复的双字节型数据）
 
+## 实验七思路与总结
+
+![](https://img-blog.csdnimg.cn/20200202135846997.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
