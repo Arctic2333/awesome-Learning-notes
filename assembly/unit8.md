@@ -107,3 +107,7 @@ dd 重复次数 dup （重复的双字节型数据）
 
 ![](https://img-blog.csdnimg.cn/20200202135846997.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
 
+**每一个年的年份和收入都是两个字归为一类使用同一个寄存器处理（保证步长相等）**
+
+**员工数和人均都为一个字**
+
