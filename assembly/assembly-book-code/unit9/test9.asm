@@ -26,21 +26,23 @@ codesg segment
 	mov di,720h
 	
 	mov cx,3
-	s:push cx
-	mov cx,16
-	mov ax,0
-	mov bx,0
+	s:
+		push cx
+		mov cx,16
+		mov ax,0
+		mov bx,0
 	
-	s0:mov al,[bx]
-	mov ah,ds:[si+bp]
-	mov word ptr es:[di],ax
-	inc bx
-	add di,2
-	loop s0
+			s0:
+			mov al,[bx]
+			mov ah,ds:[si+bp]
+			mov word ptr es:[di],ax
+			inc bx
+			add di,2
+			loop s0
 	
-	pop cx
-	add di,80h
-	inc si
+		pop cx
+		add di,80h
+		inc si
 	loop s 
 	
 	all:
