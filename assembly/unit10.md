@@ -65,3 +65,32 @@ jmp 16位reg
 
 ![](https://img-blog.csdnimg.cn/20200204222504371.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
 
+### call和ret的配合使用
+
+![](https://img-blog.csdnimg.cn/20200205144331473.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
+call指令转去执行子程序，ret返回。
+
+### mul指令
+
+**mul是乘法指令。**注意以下两点
+
+1. **两个相乘的数，两个相乘的数，要么都是8位，要么都是16位。如果是八位，一个默认放在AL中，另一个放在8位reg或内存字节单元中；如果是16位，一个默认在AX中，另一个在16位reg中或内存字单元中。**
+2. **结果：如果是8位乘法，结果默认放在AX中；如果是16位乘法，结果高位默认放在DX中，低位放在AX中。**
+
+格式：mul reg
+
+mul byte ptr
+
+mul word ptr
+
+
+
+用寄存器来存储参数和结果是最常见的方法。
+
+批量数据时，我们将批量数据放到内存中，然后将它们的所在空间的首地址放在寄存器中，传递给需要的子程序。对于有批量数据的返回结果，也用同样的方法。
+
+### 寄存器冲突
+
+![](https://img-blog.csdnimg.cn/20200205145736817.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
