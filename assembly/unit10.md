@@ -94,3 +94,76 @@ mul word ptr
 
 ![](https://img-blog.csdnimg.cn/20200205145736817.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
 
+## 实验10
+
+```assembly
+mov al,0a0h
+	dec dh
+	mul dh
+	mov bx,ax
+	
+	mov al,2
+	dec dl
+	mul dl
+	add bx,ax
+```
+
+计算偏移量
+
+```assembly
+push ax
+	
+	mov ax,dx
+	mov dx,0  ;Clear the DX of 16 bits higher than the divisor
+	div cx  ;int(H / N)
+	mov bx,ax  ;Temporary high int (H / N) quotient,Now DX is REM (H / N)
+	
+	pop ax
+	div cx
+	mov cx,dx
+	mov dx,bx
+```
+
+**把一个数放在dx中即在高位寄存器，自动就乘了65536**
+
+![](https://img-blog.csdnimg.cn/20200207134231753.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
+**十进制数码字符对应的ASCII码=十进制数码值+30H**
+
+十进制数码：
+
+![](https://img-blog.csdnimg.cn/20200207134245748.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70)
+
+```assembly
+otc:
+	push cx
+	mov cx,ax
+	jcxz transposition
+	pop cx
+	mov dx,0
+	div bx
+	mov ds:[di],dl
+	add byte ptr ds:[di],30h
+	inc di
+	inc cx
+	jmp short otc
+	
+transposition:
+	pop cx
+	mov byte ptr [di],0
+	dec di
+	mov ax,cx
+	mov bl,2
+	div bl
+	mov cl,al
+	s:
+		mov al,ds:[di]
+		mov bl,ds:[si]
+		mov ds:[di],bl
+		mov ds:[si],al
+		inc si
+		dec di
+		loop s 
+```
+
+还需要调换位置！！！
