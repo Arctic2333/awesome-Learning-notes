@@ -15,8 +15,8 @@ start:mov ax,stack
 	mov ax,0
 	mov es,ax
 	
-	mov si,offset int9
 	mov di,204h
+	mov si,offset int9
 	mov cx,offset int9end - offset int9
 	cld
 	rep movsb
@@ -34,33 +34,35 @@ start:mov ax,stack
 	mov ax,4c00h
 	int 21h
 
-int9:push ax
-	push bx
-	push cx
-	push es
-	
-	in al,60h
-	
-	pushf
-	call word ptr cs:[200h]
-	
-	cmp al,3bh
-	jne int9ret
-	
-	mov ax,0b800h
-	mov es,ax
-	mov bx,1
-	mov cx,2000
-s:  inc byte ptr es:[bx]
-	add bx,2
-	loop s
-	
-int9ret:pop es
-	pop cx
-	pop bx
-	pop ax
-	iret
+int9:
+    push ax
+    push bx
+    push es
+    push cx
+    ;从60端口读出键盘的输入
+    in al,60h
+    
+    pushf
+    call dword ptr cs:[200h]
 
+    cmp al,3bh;判断是否按下F1
+    jne int9ret
+    
+    mov ax,0b800h
+    mov es,ax
+    mov bx,1
+    mov cx,2000;一屏幕4000字节
+s:
+    inc byte ptr es:[bx]
+    add bx,2
+    loop s
+    
+int9ret:
+    pop cx
+    pop es
+    pop bx
+    pop ax
+    iret
 int9end:nop
 
 code ends
