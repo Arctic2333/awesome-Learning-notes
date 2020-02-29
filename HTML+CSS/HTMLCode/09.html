@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        audio 标签用来向页面中引入一个外部音频文件
+        音视频文件引入时 默认不不许用户控制
+        属性
+         controls 是否允许用户控制播放
+         autoplay  音频是否自动播放
+         loop  音乐循环播放
+     -->
+     <audio src="起飞了.mp3" controls autoplay loop></audio>
+     <br>
+     <br>
+     <audio controls>
+         对不起你的浏览器不支持播放，请升级。
+         <source src="起飞了.mp3">
+        <embed src="起飞了.mp3" type="audio/mp3" width="200" height="100">
+     </audio>
+     <!-- 
+         可以指定source来指定文件
+         可以导入多个音频文件
+         默认使用第一个文件
+      -->
+      <!-- 
+          embed 标签 低级浏览器ie8 导入音频
+       -->
+    <!-- video 导入视频 和audio 差不多 -->
+    <iframe width="1000" height="1000" src="https://www.bilibili.com/video/av92326111/" frameborder="0"></iframe>
+</body>
+</html>
