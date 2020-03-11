@@ -3,7 +3,7 @@
 
 bool isPrimer(int n){
     if(n == 2) 
-        return false;
+        return true;
     else if(n < 2 ) 
         return false;
     else
