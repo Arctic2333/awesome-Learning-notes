@@ -1,16 +1,16 @@
-public class student {
+public class Student {
     private int id;
     private String name;
     private char gender;
     private int age;
     private String nativeplace;
 
-    public student() {
+    public Student() {
     }
 
     ;
 
-    public student(int id, String name) {
+    public Student(int id, String name) {
         this.id = id;
         this.name = name;
     }

@@ -1,6 +1,7 @@
 
 public class StudentList {
-    private student[] students;  // stdent 对象数组
+    private Student[] Students;  // student 对象数组
+    private Student[] students1;
     private int maxlength;  // 数组最大容量
     private int length;  // 数组的当前元素个数
 
@@ -10,7 +11,8 @@ public class StudentList {
     }
 
     private void initiate(int maxlength) {
-        students = new student[maxlength];
+        Students = new Student[maxlength];
+        students1 = new Student[maxlength];
         this.maxlength = maxlength;
     }
 
@@ -22,7 +24,7 @@ public class StudentList {
         return maxlength;
     }
 
-    public boolean insert(int index, student student) {  // (位置，元素)
+    public boolean insert(int index, Student student) {  // (位置，元素)
         if (index < 0 || index > length) {
             System.out.println("插入位置出错");
             return false;
@@ -32,8 +34,8 @@ public class StudentList {
         }
         length++;
         for (; index < length; index++) {
-            student stunext = students[index];
-            students[index] = student;
+            Student stunext = Students[index];
+            Students[index] = student;
             student = stunext;
         }
         return true;
@@ -45,7 +47,7 @@ public class StudentList {
             return false;
         }
         for (; index < length - 1; index++) {
-            students[index] = students[index + 1];
+            Students[index] = Students[index + 1];
         }
         length--;
         return true;
@@ -53,7 +55,7 @@ public class StudentList {
 
     public int locate(int id) {
         for (int i = 0; i < length; i++) {
-            if (students[i].getId() == id) {
+            if (Students[i].getId() == id) {
                 System.out.println("定位成功");
                 return i;
             }
@@ -62,12 +64,12 @@ public class StudentList {
         return id;
     }
 
-    public boolean get(int i, student temp) {
+    public boolean get(int i, Student temp) {
         if (i < 0 || i > length - 1) {
             System.out.println("查找位置有误");
             return false;
         }
-        temp = students[i];
+        temp = Students[i];
         return true;
     }
 
@@ -76,10 +78,35 @@ public class StudentList {
             System.out.println("表为空");
         }
         for (int i = 0; i < length; i++) {
-            System.out.println(students[i].getId() + " " + students[i].getName() + " " + students[i].getGender()
-                    + " " + students[i].getAge() + " " + students[i].getNativeplace());
+            System.out.println(Students[i].getId() + " " + Students[i].getName() + " " + Students[i].getGender()
+                    + " " + Students[i].getAge() + " " + Students[i].getNativeplace());
         }
     }
 
     // copy 和 merge 没实现 要有两个表 在声明一个对象数组
+    public void copy() {
+        if (length == 0) {
+            System.out.println("表为空");
+        }
+        for (int i = 0; i < length; i++) {
+            students1[i] = Students[i];
+        }
+    }
+
+    public boolean merge() {
+        if (length == 0) {
+            System.out.println("表为空");
+        }
+        int len = length;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (students1[i].getId() == Students[j].getId()) {
+                    return false;
+                }
+                Students[length + 1] = students1[j];
+                length++;
+            }
+        }
+        return true;
+    }
 }
