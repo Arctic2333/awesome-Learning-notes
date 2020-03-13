@@ -54,13 +54,13 @@ public class StuLinkList {  // 定义链表类 StuLinkList
         }
     }
 
-    public void  converse(){  //  逆置操作，单链表头插法建表，数据顺序是逆序
+    public void converse() {  //  逆置操作，单链表头插法建表，数据顺序是逆序
         StuNode p = head.getNextlink();
         // 设置表头后的一个元素的 引用域为空
-        if(p == null)
+        if (p == null)
             return;
         StuNode q = p.getNextlink();
-        if(q == null)
+        if (q == null)
             return;
         p = q;
         q = p.getNextlink();
@@ -68,7 +68,7 @@ public class StuLinkList {  // 定义链表类 StuLinkList
         head.setNextlink(p);
         p.getNextlink().setNextlink(null);
         //
-        while (q != null){
+        while (q != null) {
             p = q;
             q = p.getNextlink();
             p.setNextlink(head.getNextlink());
@@ -76,12 +76,12 @@ public class StuLinkList {  // 定义链表类 StuLinkList
         }
     }
 
-    public int length(){
+    public int length() {
         StuNode p = head;
         int len = 0;
-        while ( p.getNextlink() != null){
+        while (p.getNextlink() != null) {
             p = p.getNextlink();
-            len ++;
+            len++;
         }
         return len;
     }
