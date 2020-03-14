@@ -2,10 +2,10 @@
  * @Author: Arctic
  * @Date: 2020-03-13 17:32:57
  * @Last Modified by: Arctic
- * @Last Modified time: 2020-03-13 17:42:56
- */
-// 线性表顺序储存结构
-/* InitList(*L)
+ * @Last Modified time: 2020-03-14 14:33:27
+ *
+ * 线性表顺序储存结构
+ * InitList(*L)
  * ListEmpty(L)
  * ClearList(*L)
  * GetELem(L,i,*e)
@@ -94,4 +94,7 @@ Status ListDelete(Sqlist *L, int i, ElemType *e) {
   }
   L->length--;
   return OK;
+}
+Status ListLength(Sqlist L){
+  return L.length;
 }
