@@ -90,3 +90,29 @@ Status ListInsert(LinkList *L, int i, ElemType e) {
   p->next = s;
   return OK;
 }
+Status ListDelete(LinkList *L, int i, ElemType *e) {
+  int j = 1;
+  LinkList p, q;
+  p = *L;
+  while ((p->next) && j < i) {
+    p = p->next;
+    ++j;
+  }
+  if (!(p->next) || j > i) return ERROR;
+  q = p->next;
+  p->next = q->next;
+  *e = q->data;
+  free(q);
+  return OK;
+}
+Status ClearList(LinkList *L){
+  LinkList p,q;
+  p = (*L)->next;
+  while(p){
+    q = p ->next;
+    free(p);
+    p = q;
+  }
+  (*L)->next = NULL;
+  return OK;
+}
