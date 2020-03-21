@@ -1,3 +1,5 @@
+package stack;
+
 public interface Stack {
     public int getSize(); // 返回堆栈的大小
 

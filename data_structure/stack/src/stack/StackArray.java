@@ -1,3 +1,7 @@
+package stack;
+
+import stack.Stack;
+
 public class StackArray implements Stack {
     private final int LEN = 8;  // 数组的默认大小
     private Object[] elements; // 数据元素数组
@@ -40,7 +44,7 @@ public class StackArray implements Stack {
         return obj;
     }
 
-    public Object peek() throws StackEmptyEcxception {
+    public Object peek() throws StackEmptyException {
         if (getSize() < 1)
             throw new StackEmptyException("错误，堆栈为空");
         return elements[top];
