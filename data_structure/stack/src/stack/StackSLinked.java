@@ -1,6 +1,8 @@
 package stack;
 
-import stack.*;
+import stack.SLNode;
+import stack.Stack;
+import stack.StackEmptyException;
 
 public class StackSLinked implements Stack {
     private SLNode top;
@@ -22,9 +24,8 @@ public class StackSLinked implements Stack {
     }
 
     @Override
-    public void push(Object e) {
-        @SuppressWarnings("UnnecessaryLocalVariable")
-        SLNode q = new SLNode(e, top);
+    public void push(final Object e) {
+        @SuppressWarnings("UnnecessaryLocalVariable") final SLNode q = new SLNode(e, top);
         top = q;
         size++;
     }
@@ -33,7 +34,7 @@ public class StackSLinked implements Stack {
     public Object pop() throws StackEmptyException {
         if (size < 1)
             throw new StackEmptyException("错误，堆栈为空");
-        Object obj = top.getData();
+        final Object obj = top.getData();
         top = top.getNext();
         size--;
         return obj;

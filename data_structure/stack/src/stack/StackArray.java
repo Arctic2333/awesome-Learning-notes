@@ -23,14 +23,14 @@ public class StackArray implements Stack {
     }
 
     // 入栈
-    public void push(Object e) {
+    public void push(final Object e) {
         if (getSize() >= elements.length)
             expandSpace();
         elements[++top] = e;
     }
 
     private void expandSpace() {
-        Object[] a = new Object[elements.length * 2];
+        final Object[] a = new Object[elements.length * 2];
         for (int i = 0; i < elements.length; i++)
             a[i] = elements[i];
         elements = a;
@@ -38,8 +38,8 @@ public class StackArray implements Stack {
 
     public Object pop() throws StackEmptyException {
         if (getSize() < 1)
-            throw new StackEmptyException("错误，堆栈为空");
-        Object obj = elements[top];
+            throw new StackEmptyException("��璇�锛�����涓虹┖");
+        final Object obj = elements[top];
         elements[top--] = null;  // elements[top] = null;  top -= 1;
         return obj;
     }
