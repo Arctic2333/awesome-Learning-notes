@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="652896b9-ed8e-496b-b3d3-b7d0009c92de" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/src/stack/StackArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stack/StackEmptyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackEmptyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stack/StackSLinked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackSLinked.java" afterDir="false" />
-    </list>
+    <list default="true" id="652896b9-ed8e-496b-b3d3-b7d0009c92de" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,14 +95,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584862903514</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Stack">
+      <created>1584863248601</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584863248601</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Stack">
+      <created>1584863275980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584863275980</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="StackArray" />
-    <MESSAGE value="Stack" />
     <MESSAGE value="Stack_app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stack_app" />
+    <MESSAGE value="Stack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stack" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -127,21 +137,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584761701161" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1584862906040">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1584863293451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584862906040" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1584862906040">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584863293451" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1584863293451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584862906040" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1584862906040">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584863293451" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1584863293451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584862906040" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1584862906040">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584863293451" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1584863293451">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584862906040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584863293451" />
   </component>
 </project>
