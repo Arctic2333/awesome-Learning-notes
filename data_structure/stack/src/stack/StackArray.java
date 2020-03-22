@@ -38,7 +38,7 @@ public class StackArray implements Stack {
 
     public Object pop() throws StackEmptyException {
         if (getSize() < 1)
-            throw new StackEmptyException("��璇�锛�����涓虹┖");
+            throw new StackEmptyException("错误，堆栈为空");
         final Object obj = elements[top];
         elements[top--] = null;  // elements[top] = null;  top -= 1;
         return obj;
@@ -46,7 +46,7 @@ public class StackArray implements Stack {
 
     public Object peek() throws StackEmptyException {
         if (getSize() < 1)
-            throw new StackEmptyException("错误，堆栈为空");
+            throw new StackEmptyException("");
         return elements[top];
     }
 }
