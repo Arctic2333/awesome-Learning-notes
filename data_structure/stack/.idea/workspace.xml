@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="652896b9-ed8e-496b-b3d3-b7d0009c92de" name="默认更改列表" comment="Stack">
-      <change beforePath="$PROJECT_DIR$/src/stack/TestStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/TestStack.java" afterDir="false" />
+    <list default="true" id="652896b9-ed8e-496b-b3d3-b7d0009c92de" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/src/stack/StackArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack/StackEmptyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackEmptyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack/StackSLinked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/StackSLinked.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.0" />
@@ -89,13 +92,23 @@
       <option name="project" value="LOCAL" />
       <updated>1584860876583</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Stack_app">
+      <created>1584862903514</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584862903514</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="StackArray" />
     <MESSAGE value="Stack" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stack" />
+    <MESSAGE value="Stack_app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stack_app" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1584761739757">
@@ -106,10 +119,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#项目结构/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584761423676" />
-    <state x="242" y="5" key="CommitChangelistDialog2" timestamp="1584862902472">
+    <state x="242" y="5" key="CommitChangelistDialog2" timestamp="1584863274896">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="242" y="5" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584862902472" />
+    <state x="242" y="5" key="CommitChangelistDialog2/0.0.1536.824/-1920.0.1536.824@0.0.1536.824" timestamp="1584863274896" />
     <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1584761701161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
