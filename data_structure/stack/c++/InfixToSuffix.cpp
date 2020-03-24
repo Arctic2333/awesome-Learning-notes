@@ -18,7 +18,7 @@ int main() {
         }
         stack.push(str[i]);
       }
-    } else if (str[i] == '*' || str[i] == '/') {
+    } else if (str[i] == '*' || str[i] == '/') {   // 优先级比栈顶高就直接进栈，若相等或者更低 则出栈至栈空 或 到“（”处
       if (stack.empty() || stack.top() == '+' || stack.top() == '-' ||
               stack.top() == '(') {
         stack.push(str[i]);
