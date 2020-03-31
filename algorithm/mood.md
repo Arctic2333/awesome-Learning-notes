@@ -11,6 +11,26 @@ typedef int Status;
 typedef int ElemType;
 ```
 
+### 读入优化：
+
+```c++
+template <class T> void read(T &x) {
+  x = 0;
+  int f = 0;
+  char ch = getchar();
+  while (ch < '0' || ch > '9') {
+    f |= (ch == '-');
+    ch = getchar();
+  }
+  while (ch >= '0' && ch <= '9') {
+    x = (x << 1) + (x << 3) + (ch ^ 48);
+    ch = getchar();
+  }
+  x = f ? -x : x;
+  return;
+}
+```
+
 **int a[15] = {0};**
 **编译器会把第一个初始化值(这里是0)赋给数组的第一个元素，然后用默认值0赋给其余的元素。如果没有给出初始值，编译器不会去做初始化工作。这样简洁的方式让代码更加高效。**
 
@@ -70,9 +90,7 @@ for(int i = 1; i <= m; i++){  // 种类相关
   }
 ```
 
-### dp 方案数
-
-dp 装箱 体积就是价值
+### dp 方案数   一定要将dp[0] = 1;
 
 ```c++
 for(int i = 1; i <= m; i++){
