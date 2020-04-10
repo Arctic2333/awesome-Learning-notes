@@ -1,0 +1,3 @@
+输入3行字符串，分别是s字符串, t字符串和r字符串。如果s字符串中有包含t字符串，则用r字符串替换之。例如：s=“12aaabc3aaaaaabc#$%aaabc”，t=“aaabc”，r=“abc”，将s中的“aaabc”替换成“abc”之后，s=“12abc3aabc#$%abc”。输出替换之后的s字符串。
+输入3行字符串，分别是s字符串, t字符串和r字符串。如果s字符串中有包含t字符串，则用r字符串替换之。例如：s=“12aaabc3aaaaaabc#$%aaabc”，t=“aaabc”，r=“abc”，将s中的“aaabc”替换成“abc”之后，s=“12abc3aabc#$%abc”。输出替换之后的s字符串。
+12345
