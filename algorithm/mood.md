@@ -258,3 +258,27 @@ void dfs(int p,int cur,double s,int bi){
 }
 ```
 
+![](https://img-blog.csdnimg.cn/20200412143221467.PNG)
+
+
+
+## C++ string 类中substr的使用方法
+
+```c++
+#include<string>
+using namespace std;
+int main()
+{
+    string x="Hello_World";
+    /*默认截取从0到npos.重载原型为string substr(_off=0,_count=npos);npos一般表示为string类中不存在的位置,_off表示字符串的开始位置，_count截取的字符的数目*/
+    cout<<x.substr()<<endl;
+    cout<<x.substr(5)<<endl;//截取x[5]到结尾，即npos.重载原型为string substr(_off,_count=npos)
+    cout<<x.substr(0,5)<<endl;//以x[0]为始，向后截取5位（包含x[0]），重载原型string substr(_off,_count)
+    /*
+    备注：
+    指定的截取长度加起始位置即_off+_count>源字符串的长度，则子字符串将延续到源字符串的结尾
+    */
+}
+```
+
+### scanf("%1d",&a); 格式化输入 一次只输入一位数
