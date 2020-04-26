@@ -39,7 +39,7 @@ int longIntegerSum(char a[], char b[], int c[]) {
       pc++;
     }
   }
-  if (*p)
+  if (*pc)
     len = pc - c + 1;
   else
     len = pc - c;
