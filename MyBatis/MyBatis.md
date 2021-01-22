@@ -320,3 +320,160 @@ public class UserMapperTest {
 运行结果：
 
 ![](https://img-blog.csdnimg.cn/20210121211125581.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
+
+## CRUD
+
+我们继续在原来的项目上进行真假增删改查的功能。
+我们知道要增加这些功能只需要在原有的UserMapper接口中声明方法和在配置类中实现。
+那么此时我们在UserMapper中添加一下几个方法：
+
+ - getUserById
+ - update
+ - insert
+ - delete
+ 那么我们的UserMapper将会变成：
+ ```java
+ public interface UserMapper {
+    /**
+     * 获取全部用户
+     *
+     * @return 含全部用户的列表
+     */
+    List<User> getUserList();
+
+    /**
+     * 获取用户通过用户ID
+     *
+     * @return 特定用户
+     */
+    User getUserById();
+
+    /**
+     * 更新用户信息
+     *
+     * @param user 用户实例
+     * @return 更新是否成功
+     */
+    int update(User user);
+
+    /**
+     * 拆入一个新用户
+     *
+     * @param user 用户实例
+     * @return 插入是否成功
+     */
+    int insert(User user);
+
+    /**
+     * 删除一个用户
+     *
+     * @param id 用户id
+     * @return 删除是否成功
+     */
+    int delete(int id);
+}
+ ```
+接下来我们只需要去编写配置文件 UserMapper.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.arctic.dao.UserMapper">
+    <select id="getUserList" resultType="com.arctic.pojo.User">
+        select *
+        from mybatis.user;
+    </select>
+
+    <select id="getUserById" resultType="com.arctic.pojo.User" parameterType="int">
+        select *
+        from mybatis.user
+        where id = #{id};
+    </select>
+
+    <update id="update" parameterType="com.arctic.pojo.User">
+        update mybatis.user
+        set name = #{name},
+            pwd  = #{pwd}
+        where id = #{id};
+    </update>
+
+    <insert id="insert" parameterType="com.arctic.pojo.User">
+        insert into mybatis.user (id, name, pwd)
+        values (#{id}, #{name}, #{pwd});
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete
+        from mybatis.user
+        where id = #{id};
+    </delete>
+</mapper>
+```
+编写配置文件时，函数传入的参数值，和实体类具体的值都可以通过#{}取得
+编写测试类：
+```java
+public class UserMapperTest {
+    @Test
+    public void getUserListTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        List<User> users = userMapper.getUserList();
+        for (User user : users) {
+            System.out.println(user);
+        }
+        sqlSession.close();
+    }
+
+    @Test
+    public void getUserByIdTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        User user = userMapper.getUserById(1);
+        System.out.println(user);
+        sqlSession.close();
+    }
+
+    @Test
+    public void updateTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.update(new User(1,"ArcticTest","UpdateTest"));
+        if (res > 0 ){
+            System.out.println("更新成功");
+        }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void insertTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.insert(new User(5,"InsertTest","test"));
+        if (res > 0 ){
+            System.out.println("插入成功");
+        }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void deleteTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        int res = userMapper.delete(5);
+        if (res > 0 ){
+            System.out.println("删除成功");
+        }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+}
+```
+我们要注意：**增删改属于事务需要提交 sqlSession.commit**
+测试结果：
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
