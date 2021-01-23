@@ -477,3 +477,56 @@ public class UserMapperTest {
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914141.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210122175914115.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTUwODkw,size_16,color_FFFFFF,t_70#pic_center)
+
+## CRUD中巧妙的方法 （但是不适合调试）
+使用map作为参数时，MyBatis会自动取值，这样针对数据库表字段较多的情况或者参数过多我们就可以考虑使用map作为参数。
+ 在UserMapper中添加一个方法。
+ ```java
+     /**
+     * 更新用户
+     * 
+     * @param map map参数
+     * @return 更新是否成功
+     */
+    int updateUser(Map<String,Object> map);
+ ```
+编写配置xml：
+```xml
+    <update id="updateUser" parameterType="map">
+        update mybatis.user
+        set name = #{username}
+        where id = #{id};
+    </update>
+```
+编写测试类，注意Map的应用：
+```java
+    @Test
+    public void updateUserTest(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        Map<String,Object> map = new HashMap<>();
+        map.put("username","TestMap");
+        map.put("id",4);
+        int res = userMapper.updateUser(map);
+        if (res > 0 ){
+            System.out.println("更新成功");
+        }
+        sqlSession.commit();
+        sqlSession.close();
+    }
+}
+```
+这里要注意map中的键值对要和配置类中的名相同。
+
+## 模糊查询
+1. Java代码执行的时候，传递通配符 % %
+
+   ```java
+   List<User> userList = mapper.getUserLike("%李%");
+   ```
+
+2. 在sql拼接中使用通配符！
+
+   ```java
+   select * from mybatis.user where name like "%"#{value}"%"
+   ```
